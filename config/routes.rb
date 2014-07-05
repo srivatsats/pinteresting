@@ -1,4 +1,6 @@
 Pinteresting::Application.routes.draw do
+  resources :pins
+
   devise_for :users
   root "page#home"
   get "about" => "page#about" # adds about_path variable that can be used across the system
