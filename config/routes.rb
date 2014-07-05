@@ -2,6 +2,10 @@ Pinteresting::Application.routes.draw do
   root "page#home"
   get "about" => "page#about" # adds about_path variable that can be used across the system
 
+  get "login" => "page#login" # adds login_path variable that can be used across the system
+
+  get "gallery" => "page#gallery" # adds gallery_path variable that can be used across the system
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
