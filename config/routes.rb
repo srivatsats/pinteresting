@@ -1,8 +1,7 @@
 Pinteresting::Application.routes.draw do
+  devise_for :users
   root "page#home"
   get "about" => "page#about" # adds about_path variable that can be used across the system
-
-  get "login" => "page#login" # adds login_path variable that can be used across the system
 
   get "gallery" => "page#gallery" # adds gallery_path variable that can be used across the system
 

@@ -1,8 +1,15 @@
 <div class="jumbotron center">
 	
-	<h1>Welcome to SrInterests !</h1>
-	<p>
-		<%= link_to "Log-In", login_path, class: "btn btn-warning btn-lg" %>
-		<%= link_to "Sign Up", login_path, class: "btn btn-danger btn-lg" %>
-	</p>
+	<% if user_signed_in? %>
+		<h1>Welcome to Members area !</h1>
+		<p> You are now logged in!</p>	
+
+	<% else %>
+		<h1>Welcome to SrInterests !</h1>
+		<p> Please Sing-In/Sign-Up to view the gallery</p>		
+		<p>
+			<%= link_to "Sign-In", new_user_session_path, class: "btn btn-warning btn-lg" %>
+			<%= link_to "Sign-Up", new_user_registration_path, class: "btn btn-danger btn-lg" %>
+		</p>
+	<% end %>	
 </div>

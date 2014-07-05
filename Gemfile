@@ -32,6 +32,9 @@ end
 #Including Bootstrap gem
 gem 'bootstrap-sass'
 
+#Including devise gem to login process
+gem 'devise', '~> 3.2.4'
+
 group :development, :test do
 	gem 'sqlite3'
 end

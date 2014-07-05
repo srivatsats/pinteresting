@@ -4,9 +4,6 @@ class PageController < ApplicationController
 
   def about
   end
-
-  def login
-  end
   
   def gallery
   end	
