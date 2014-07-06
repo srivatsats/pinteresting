@@ -1,46 +1,16 @@
-<h1>Listing pins</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Photogtaph</th>
-      <th>Description</th>
-      <th>Owner</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @pins.each do |pin| %>
-      <tr>
-        <td><%= image_tag pin.image.url(:medium) %></td>
-        <td><%= pin.description %></td>
-        <td><%= pin.user.try(:email) %></td>
-        <td><%= link_to 'Show', pin %></td>
-         <% if (user_signed_in? and  pin.user == current_user) %> 
-          <td>
+<div id="pins" class="transitions-enabled">
+  <% @pins.each do |pin| %>
+    <div class="box panel panel-default">
+      <%= image_tag pin.image.url(:medium) %>
+      <div class="panel-body">
+        <%= pin.description %>
+        <%= pin.user.try(:email) %>
+        <%= link_to 'View', pin %>
+        <% if (user_signed_in? and  pin.user == current_user) %> 
             <%= link_to 'Edit', edit_pin_path(pin) %>
-          </td>
-          <td>
-            <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </td>
-        <% end %>       
-      </tr>
-      <tr>
-        <td></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<% if user_signed_in? %>
-  <%= link_to 'Create New Pin', new_pin_path, class: "btn btn-danger btn-xs"%>
- <% else %>
-  <div class="alert alert-warning" role="alert">You are not Signed-In !
-    <%= link_to "Sign-In", new_user_session_path, class: "btn btn-warning btn-xs" %> OR <%= link_to "Sign-Up", new_user_registration_path, class: "btn btn-danger btn-xs" %> to manage your Pins
-  </div>  
-<% end %>
+            <%= link_to 'Delete', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %> 
+      </div>  
+    </div>       
+  <% end %>
+</div>

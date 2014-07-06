@@ -15,3 +15,6 @@
 /log/*.log
 /tmp
 
+* Ignore all the images in the public folder
+/public/system/*
+
