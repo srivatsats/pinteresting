@@ -45,6 +45,11 @@ gem 'aws-sdk', '~> 1.46.0'
 # Including to enhance the look and feel of the app using jQuery masonry
 gem 'masonry-rails', '~> 0.2.1'
 
+# Required for pagination
+gem 'will_paginate', '~> 3.0.7'
+
+gem 'will_paginate-bootstrap', '~> 1.0.1'
+
 group :development, :test do
 	gem 'sqlite3'
 end
