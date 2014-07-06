@@ -38,6 +38,9 @@ gem 'devise', '~> 3.2.4'
 #Incliding paperclip gemfor handling files and attachments
 gem 'paperclip', github: 'thoughtbot/paperclip'
 
+#Incliding the gem for handling the images in AWS S3
+gem 'aws-sdk', '~> 1.46.0'
+
 group :development, :test do
 	gem 'sqlite3'
 end
