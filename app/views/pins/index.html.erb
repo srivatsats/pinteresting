@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Description</th>
+      <th>Owner</th>
       <th></th>
       <th></th>
       <th></th>
@@ -14,9 +15,16 @@
     <% @pins.each do |pin| %>
       <tr>
         <td><%= pin.description %></td>
+        <td><%= pin.user.try(:email) %></td>
         <td><%= link_to 'Show', pin %></td>
-        <td><%= link_to 'Edit', edit_pin_path(pin) %></td>
-        <td><%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if (user_signed_in? and  pin.user == current_user) %>
+          <td>
+            <%= link_to 'Edit', edit_pin_path(pin) %>
+          </td>
+          <td>
+            <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +32,10 @@
 
 <br>
 
-<%= link_to 'New Pin', new_pin_path %>
+<% if user_signed_in? %>
+  <%= link_to 'Create New Pin', new_pin_path, class: "btn btn-danger btn-xs"%>
+ <% else %>
+  <div class="alert alert-warning" role="alert">You are not Signed-In !
+    <%= link_to "Sign-In", new_user_session_path, class: "btn btn-warning btn-xs" %> OR <%= link_to "Sign-Up", new_user_registration_path, class: "btn btn-danger btn-xs" %> to manage your Pins
+  </div>  
+<% end %>
