@@ -17,35 +17,77 @@
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      
 	      <ul class="nav navbar-nav navbar-right">
-	        <li class="active"><%= link_to "Home", root_path %></li>
-	        <li class="active"><%= link_to "About Us", about_path %></li>
+	        <li class="active">
+	        	<%= link_to root_path do%>
+	        		<span class="glyphicon glyphicon-home"></span> Home
+	        	<% end %>
+	        </li>
+	        <li class="active">
+	         	<%= link_to about_path do%>
+	        		<span class="glyphicon glyphicon-bullhorn"></span> About Us
+	        	<% end %>
+	        </li>
 	        	
 	        <% if user_signed_in? %>	        
 		        <li class="dropdown">
-		          	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Manage Pins<span class="caret"></span></a>
+		          	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+		          		<span class="glyphicon glyphicon-pushpin"></span> Manage Pins <span class="caret"></span>
+		          	</a>
 		         	<ul class="dropdown-menu" role="menu">
-			            <li><%= link_to "My Pins", pins_path %></li>
+			            <li>
+			            	<%= link_to pins_path do%>
+			            		<span class="glyphicon glyphicon-th-list"></span> My Pins
+			            	<% end %>
+			            </li>
 			            <li class="divider"></li>
-			            <li><%= link_to "All Pins", pins_path %></li>
+			            <li>
+			            	<%= link_to pins_path do%>
+			            		<span class="glyphicon glyphicon-th"></span> All Pins
+			            	<% end %>
+			            </li>
 			            <li class="divider"></li>
-			            <li><%= link_to "Create New Pin", new_pin_path %></li>
+			            <li>
+			            	<%= link_to new_pin_path do%>
+			            		<span class="glyphicon glyphicon-plus"></span> Create New Pin
+			            	<% end %>
+			            </li>
 		         	</ul>			         	
 		        </li>
 		        <li class="dropdown">
-		          	<a href="page/about" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.email %> <span class="caret"></span></a>
+		          	<a href="page/about" class="dropdown-toggle" data-toggle="dropdown">
+		          		<span class="glyphicon glyphicon-user"></span> <%= current_user.email %> <span class="caret"></span>
+		          	</a>
 		         	<ul class="dropdown-menu" role="menu">
-			            <li><%= link_to "Settings", edit_user_registration_path %></li>
-			            <li class="divider"></li>
-			            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+			            <li>
+			            	<%= link_to edit_user_registration_path do%>
+			            		<span class="glyphicon glyphicon-cog"></span> Settings
+			            	<% end %>
+			            </li>
+			            <li class="divider"></li> 
+			            <li>
+			            	<%= link_to destroy_user_session_path, method: :delete do%>
+			            		<span class="glyphicon glyphicon-log-out"></span> Logout
+			            	<% end %>
+			            </li>
 		         	</ul>			         	
 		        </li>
 		    <% else %>
 		        <li class="dropdown">
-		          	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Manage Pins<span class="caret"></span></a>
+		          	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+		          		<span class="glyphicon glyphicon-pushpin"></span> Manage Pins<span class="caret"></span>
+		          	</a>
 		         	<ul class="dropdown-menu" role="menu">
-			            <li><%= link_to "All Pins", pins_path %></li>
+			            <li>
+			            	<%= link_to pins_path do%>
+			            		<span class="glyphicon glyphicon-th"></span> All Pins
+			            	<% end %>
+			            </li>
 			            <li class="divider"></li>
-			            <li><%= link_to "Sign-In", new_user_session_path%></li>
+			            <li>
+			            	<%= link_to new_user_session_path do%>
+			            		<span class="glyphicon glyphicon-log-in"></span> Sign-In
+			            	<% end %>
+			            </li>
 		         	</ul>			         	
 		        </li>
 		    <% end %>	  	        

@@ -2,7 +2,7 @@ Pinteresting::Application.routes.draw do
   resources :pins
 
   devise_for :users
-  root "page#home"
+  root "pins#index"
   get "about" => "page#about" # adds about_path variable that can be used across the system
 
   get "gallery" => "page#gallery" # adds gallery_path variable that can be used across the system

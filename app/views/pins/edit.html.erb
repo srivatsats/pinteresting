@@ -2,5 +2,10 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @pin %> |
-<%= link_to 'Back', pins_path %>
+<%= link_to @pin do%>
+	<span class="glyphicon glyphicon-eye-open"></span> View
+<%end%>
+<%= link_to pins_path do%>
+	<span class="glyphicon glyphicon-backward"></span> Go Back
+<%end%>
+
