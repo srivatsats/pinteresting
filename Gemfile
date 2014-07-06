@@ -35,6 +35,9 @@ gem 'bootstrap-sass'
 #Including devise gem to login process
 gem 'devise', '~> 3.2.4'
 
+#Incliding paperclip gemfor handling files and attachments
+gem 'paperclip', github: 'thoughtbot/paperclip'
+
 group :development, :test do
 	gem 'sqlite3'
 end
