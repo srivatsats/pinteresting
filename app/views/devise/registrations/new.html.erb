@@ -10,26 +10,26 @@
 			
 			<div class="form-group">
 			  <%= f.label :name %>
-			  <%= f.text_field :name, autofocus: true, class: "form-control" %>
+			  <%= f.text_field :name, autofocus: true, placeholder: "Enter your full name", class: "form-control" %>
 			</div>
 
 			<div class="form-group">
 				<%= f.label :email %>
-				<%= f.email_field :email, autofocus: true, class: "form-control" %>
+				<%= f.email_field :email, autofocus: true, placeholder: "Enter your email address", class: "form-control" %>
 			</div>
 
 			<div class="form-group">
 				<%= f.label :password %>
-				<%= f.password_field :password, autocomplete: "off", class: "form-control"  %>
+				<%= f.password_field :password, autocomplete: "off", placeholder: "Enter your password", class: "form-control"  %>
 			</div>
 
 			<div class="form-group">
 				<%= f.label :password_confirmation %>
-			    <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control"  %>
+			    <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm your password", class: "form-control"  %>
 			</div>
 
 			<div class="form-group">
-				<%= f.submit "Sign-up", class: "btn btn-danger btn-lg" %>
+				<%= f.submit "Sign-up", class: "btn btn-danger btn-lg"%>
 			</div>
 		<% end %>
 	</div>
