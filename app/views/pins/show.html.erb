@@ -11,7 +11,7 @@
 				  <strong><%= @pin.description %></strong>
 				</p>
 				<p>
-				  <strong>By: <%= @pin.user.email %></strong>
+				  <strong>By: <%= @pin.user.name %></strong>
 				</p>				
 
 				<% if (user_signed_in? and  @pin.user == current_user) %>
