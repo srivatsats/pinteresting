@@ -1,29 +1,34 @@
-<div class="panel panel-default">
-	<div class="panel panel-heading">
-		<h1>Change your password</h1>
-	</div>
-	
-	<div class= "panel-body">
-		<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-			<%= devise_error_messages! %>
-			<%= f.hidden_field :reset_password_token %>
+<div class="col-md-offset-2 col-md-8">	
+	<div class="panel panel-success">
+		<div class="panel panel-heading">
+			<h1>Change your password</h1>
+		</div>
+		
+		<div class= "panel-body">
+			<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+				<%= devise_error_messages! %>
+				<%= f.hidden_field :reset_password_token %>
 
-			<div class= "form-group">
-			  	<%= f.label :password, "New password" %>
-			    <%= f.password_field :password, autofocus: true, autocomplete: "off", placeholder: "Enter your new password", class: "form-control" %>
-			</div>
+				<div class= "form-group">
+				  	<%= f.label :password, "New password" %>
+				    <%= f.password_field :password, autofocus: true, autocomplete: "off", placeholder: "Enter your new password", class: "form-control" %>
+				</div>
 
-			<div class= "form-group">
-				<%= f.label :password_confirmation, "Confirm new password", placeholder: "Confirm your new password",class: "form-control" %>
-			    <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
-			</div>
+				<div class= "form-group">
+					<%= f.label :password_confirmation, "Confirm new password", placeholder: "Confirm your new password",class: "form-control" %>
+				    <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+				</div>
 
-			<div class= "form-group">
-			  	<%= f.submit "Change my password", class: "btn btn-danger btn-lg" %>
-			</div>
-		<% end %>
-	</div>
-	<div class="panel-footer">	
-		<%= render "devise/shared/links" %>
+		<!--		<div class= "form-group">
+				  	<%= f.submit "Change my password", class: "btn btn-danger btn-lg" %>
+				</div>-->
+				<%= button_tag(type: 'submit', class: "btn btn-danger btn-lg") do %>
+					<span class="glyphicon glyphicon-pencil"></span>  Change my password
+				<% end %>			
+			<% end %>
+		</div>
+		<div class="panel-footer">	
+			<%= render "devise/shared/links" %>
+		</div>
 	</div>
 </div>
