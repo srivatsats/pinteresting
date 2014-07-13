@@ -1,0 +1,30 @@
+.about_body {
+	 font-family: 'Lato', sans-serif;
+	  line-height: 1.5;
+	  color: white;
+	  background-image: url(image-path('Lion.jpg'));
+	 /* background: url('/app/assets/images/Lion.jpg');*/
+	  /* Full Page Background Receipe */
+	  background-size: cover;
+	  background-position: center;
+	  background-attachment: fixed;
+}
+
+.about_container { 
+    width: 500px; 
+    margin: 0 auto;  
+    background: rgba(0,0,0,0.5);
+    padding: 15px;
+    border-radius: 20px;
+    text-align: center;
+ }
+
+.about_h1 {
+  font-size: 80px;
+  margin-bottom: -40px;
+}
+
+.about_a { 
+  color: #3F82F8; 
+  text-decoration: none; 
+ }
