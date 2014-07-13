@@ -16,7 +16,8 @@
         <p><span class="glyphicon glyphicon-list-alt"></span>  <%= pin.description %></p>
         
         <p><strong><span class="glyphicon glyphicon-camera"></span>  <%= pin.user.try(:name) %></strong></p>  
-
+        
+        <div class="fb-like" data-href="http://srinterests.herokuapp.com" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
 
         <% if (user_signed_in? and  pin.user == current_user) %>
           <div class="actions">
